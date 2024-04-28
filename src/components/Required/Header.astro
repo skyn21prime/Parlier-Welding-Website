@@ -1,0 +1,82 @@
+<header>
+    <a href="/" id="Header-Title">
+        <img src="https://www.svgrepo.com/show/278753/welding.svg" style="width: 24px;">
+        <span>Parlier Welding Club</span>
+    </a>
+    <nav>
+        <a>Home</a>
+        <a>About</a>
+        <a>Gallery</a>
+        <a>Officers</a>
+        <a>Projects</a>
+    </nav>
+</header>
+
+<style>
+    header{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        justify-items: center;
+        width: 100vw;
+        height: 100px;
+        background-color: grey;
+    }
+    #Header-Title{
+        display: flex;
+        column-gap: 20px;
+        width: 280px;
+        align-items: center;
+        justify-content: center;
+    }
+    #Header-Title span{
+        font-size: 24px;
+        text-wrap: nowrap;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 70vw;
+    }
+    header nav a{
+        display: inline-block;
+        padding: 10px;
+        position: relative;
+    }
+    header nav a{
+        cursor: pointer;
+    }
+    header nav a::before{
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 4px;
+
+        bottom: 0px;
+        right: 0px;
+
+        background-color: orange;
+        transition: 250ms;
+        
+    }
+    header nav a::after{
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 4px;
+
+        bottom: 0px;
+        left: 0px;
+        
+        background-color: orange;
+        transition: 250ms;
+        
+    }
+    header nav a:hover::before{
+        width: 50%;
+    }
+    header nav a:hover::after{
+        width: 50%;
+    }
+</style>

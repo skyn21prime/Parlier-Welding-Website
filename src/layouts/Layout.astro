@@ -1,0 +1,23 @@
+---
+interface Props {
+	name: string;
+}
+
+const { name } = Astro.props;
+
+import Header from "../components/Required/Header.astro"
+import "./styles.css"
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Parlier Welding | {name}</title>
+	</head>
+	<body>
+		<Header></Header>
+		<slot />
+	</body>
+</html>

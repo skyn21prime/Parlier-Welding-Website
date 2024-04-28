@@ -1,0 +1,14 @@
+body, html, body *{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    grid-template-areas: 
+    "header" "header" "stuff"
+    ;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Arial, Helvetica, sans-serif;
+}
