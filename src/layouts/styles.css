@@ -3,12 +3,18 @@ body, html, body *{
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+
 }
-body{
-    grid-template-areas: 
-    "header" "header" "stuff"
-    ;
-}
+
 h1,h2,h3,h4,h5,h6{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: "electroize";
+    src: url('/Fonts/Electrolize-Regular.ttf');
+}
+@font-face {
+    font-family: "Share Tech";
+    src: url("/Fonts/ShareTech-Regular.ttf");
 }

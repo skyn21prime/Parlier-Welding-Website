@@ -1,80 +1,32 @@
-<header class="w-full h-24">
-    <a href="/" id="Header-Title" class=" font-bold">
-        <img src="https://www.svgrepo.com/show/278753/welding.svg" style="width: 24px;">
-        <span>Parlier Welding Club</span>
-    </a>
+---
+    import A from "../HoverInLink";
+---
+<header style="" class=" bg-stone-900 h-20 flex items-center justify-center">
+    <style>
+        @font-face {
+            font-family: "Share Tech";
+            src: url("/Fonts/ShareTech-Regular.ttf");
+        }
+    </style>
+    <h1 style="font-family: 'Share Tech'; color:rgb(97, 105, 253); font-size:xx-large;">
+        Parlier Welding Club
+    </h1>
     <nav>
-        <a>Home</a>
-        <a>About</a>
-        <a>Gallery</a>
-        <a href="Cabinet">Cabinet</a>
-        <a>Projects</a>
+        <A href="/" text="Home"></A>
+        <A text="Cabinet"></A>
+        <A text="Gallery"></A>
+        <A text="Projects"></A>
     </nav>
 </header>
 
 <style>
     header{
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        justify-items: center;
-        background-color: grey;
-    }
-    #Header-Title{
-        display: flex;
-        column-gap: 20px;
-        width: 280px;
-        align-items: center;
-        justify-content: center;
-    }
-    #Header-Title span{
-        font-size: 24px;
-        text-wrap: nowrap;
+        display:flex; 
+        justify-content: space-around;
+        
     }
     nav{
         display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 70vw;
-    }
-    header nav a{
-        display: inline-block;
-        padding: 10px;
-        position: relative;
-    }
-    header nav a{
-        cursor: pointer;
-    }
-    header nav a::before{
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: 4px;
-
-        bottom: 0px;
-        right: 0px;
-
-        background-color: orange;
-        transition: 250ms;
-        
-    }
-    header nav a::after{
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: 4px;
-
-        bottom: 0px;
-        left: 0px;
-        
-        background-color: orange;
-        transition: 250ms;
-        
-    }
-    header nav a:hover::before{
-        width: 50%;
-    }
-    header nav a:hover::after{
-        width: 50%;
+        gap:5vmin;
     }
 </style>
