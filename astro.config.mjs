@@ -9,9 +9,7 @@ export default defineConfig({
   redirects: {
     '/Home': '/',
  },
- buildOptions: {
-  publicPath: '/Parlier-Welding-Website/',
-},
+  site: 'https://cyborgnetical.github.io/',
+  base: 'Parlier-Welding-Website',
 });
-import { defineConfig } from 'astro/config';
 
