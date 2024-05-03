@@ -1,12 +1,25 @@
 ---
+const Lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dignissimos sed dolore fugit quae neque rerum perferendis voluptatem, numquam, placeat inventore ad quisquam tempore omnis odit quas illum voluptatum? Error."
+
 interface Props {
 	name: string;
+	desc?:string;
 }
 
-const { name } = Astro.props;
+const { name, desc = Lorem } = Astro.props;
 
 import Header from "../components/Required/Header.astro"
-import "./styles.css"
+import "./styles.less"
+
+let visible = true
+let show = false
+
+if(name=="Home"){
+	visible = false
+}
+if(desc != ""){
+	show = true
+}
 ---
 
 <!doctype html>
@@ -18,6 +31,18 @@ import "./styles.css"
 	</head>
 	<body>
 		<Header></Header>
+		{visible &&
+
+		<div id="Page-Title" class=" bg-slate-400">
+			<hr>
+			<h1>
+				{name}
+			</h1>
+			{show && <p>{desc}</p>}
+			<hr>
+		</div>
+
+		}
 		<slot />
 	</body>
 </html>
