@@ -13,7 +13,7 @@ const { name , position , img = "", gridCol = ""} = Astro.props;
 
 ---
 
-<div class=" grid grid-cols-2 grid-rows-3 p-4 border shadow-xl shadow-sky-500">
+<div class=" grid grid-cols-2 grid-rows-3 p-4">
     <img alt="Place Holder Image" class=" flex justify-center items-center rounded-md">
     <h2 class=" bg-slate-300 rounded-md pl-5"> {name} </h2>
     <h3 style="margin: auto; width:100%;">Club {position}</h3>
@@ -33,6 +33,10 @@ const { name , position , img = "", gridCol = ""} = Astro.props;
         grid-column:var(--gridCol) ;
         align-items: stretch;
         font-size: 12px;
+        transition: box-shadow 250ms;
+        &:hover{
+            box-shadow: 0 0 5px 5px skyblue;
+        }
         & img{
             grid-row: 1 / -1;
             background-color: white;

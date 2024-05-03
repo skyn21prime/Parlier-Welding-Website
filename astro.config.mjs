@@ -8,8 +8,6 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   redirects: {
     '/Home': '/',
- },
-  site: 'https://cyborgnetical.github.io/',
-  base: 'Parlier-Welding-Website',
+ }
 });
 
