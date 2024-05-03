@@ -8,7 +8,7 @@ function A(props){
     let redirect = props.href ? props.href : props.text
     let timeout = 5
 
-    let aa = <a href={redirect} className=" text-cyan-500 font-medium glowOption">
+    let aa = <a href={`/${redirect}`} className=" text-cyan-500 font-medium glowOption">
         {props.text}
     </a>;
 
