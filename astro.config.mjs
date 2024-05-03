@@ -9,6 +9,9 @@ export default defineConfig({
   redirects: {
     '/Home': '/',
  },
+ buildOptions: {
+  publicPath: '/Parlier-Welding-Website/',
+},
 });
 import { defineConfig } from 'astro/config';
 
