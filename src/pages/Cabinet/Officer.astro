@@ -24,7 +24,6 @@ const { name , position , img = "", gridCol = ""} = Astro.props;
 
 <style lang="less" define:vars={{gridCol}}>
     div{
-        font-family:" Inter var";
         background-color: black;
         border-radius: 10px;
         height: 300px;
@@ -33,12 +32,11 @@ const { name , position , img = "", gridCol = ""} = Astro.props;
         grid-template-rows: 1fr 1fr 5fr;
         grid-column:var(--gridCol) ;
         align-items: stretch;
-        
+        font-size: 12px;
         & img{
             grid-row: 1 / -1;
             background-color: white;
             color: black;
-            
         }
     }
 </style>
