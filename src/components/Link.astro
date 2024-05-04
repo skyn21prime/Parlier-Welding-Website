@@ -1,0 +1,30 @@
+---
+
+
+import  "./HoverinLink.less"
+interface Props {
+	href?: string;
+    timeout:number;
+	text:string;
+}
+
+    let { text, href = text, timeout} = Astro.props;
+    let number = `${timeout}s`
+---
+<style define:vars={{number}}>
+    a{
+        animation: fancy var(--number);
+    }
+</style>
+
+<a class=" text-cyan-500 font-medium glowOption" id=`linko${timeout}` href={href}>
+    {text}
+</a>
+
+<script define:vars={{timeout}}>
+
+    setTimeout(()=>{
+        document.getElementById(`linko${timeout}`).style.color = "#06b6d4"
+        document.getElementById(`linko${timeout}`).style.textShadow = "cyan 0 0 10px"
+    },timeout*250)
+</script>

@@ -1,23 +1,25 @@
 ---
-    import A from "../HoverInLink";
+    import A from "../Link.astro";
 ---
-<header style="" class=" bg-stone-900 h-24 flex items-center justify-center">
-    <style>
-        @font-face {
-            font-family: "Share Tech";
-            src: url("/Fonts/ShareTech-Regular.ttf");
-        }
-    </style>
-    <h1 style="font-family: 'Share Tech'; color:rgb(97, 105, 253); font-size:xx-large;">
-        Parlier Welding Club
-    </h1>
-    <nav>
-        <A href="" text="Home" timeout={1}></A>
-        <A text="Cabinet" timeout={2}></A>
-        <A text="Gallery" timeout={3}></A>
-        <A text="Projects" timeout={4}></A>
-    </nav>
-</header>
+<a href="/">
+    <header style="" class=" bg-stone-900 h-24 flex items-center justify-center">
+        <style>
+            @font-face {
+                font-family: "Share Tech";
+                src: url("/Fonts/ShareTech-Regular.ttf");
+            }
+        </style>
+        <h1 style="font-family: 'Share Tech'; color:rgb(97, 105, 253); font-size:xx-large;">
+            Parlier Welding Club
+        </h1>
+        <nav>
+            <A href="" text="Home" timeout={1}></A>
+            <A text="Cabinet" timeout={2}></A>
+            <A text="Gallery" timeout={3}></A>
+            <A text="Projects" timeout={4}></A>
+        </nav>
+    </header>
+</a>
 
 <style>
     header{
