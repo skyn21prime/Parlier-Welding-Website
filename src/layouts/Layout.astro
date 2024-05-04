@@ -30,7 +30,10 @@ if(desc != ""){
 		<title>Parlier Welding | {name}</title>
 	</head>
 	<body>
-		<Header></Header>
+		<script is:inline define:vars={{name}}>
+		const Name = name
+		</script>
+		<Header CurrentPage={name}></Header>
 		{visible &&
 
 		<div id="Page-Title" class=" bg-slate-400">
