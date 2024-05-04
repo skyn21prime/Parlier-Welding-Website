@@ -9,7 +9,7 @@ export default defineConfig({
   redirects: {
     '/Home': "/",
  },
-  site:"https://cyborgnetical.github.io/Parlier-Welding-Website/",
-
+ site: "https://cyborgnetical.github.io/Parlier-Welding-Website/",
+ base: '/Parlier-Welding-Website/'
 });
 
