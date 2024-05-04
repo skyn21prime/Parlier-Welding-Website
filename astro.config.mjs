@@ -10,6 +10,7 @@ export default defineConfig({
     '/Home': "/",
  },
  site: "https://cyborgnetical.github.io/Parlier-Welding-Website/",
- base: '/Parlier-Welding-Website/'
+ base: '/Parlier-Welding-Website/',
+ public: './public'
 });
 
