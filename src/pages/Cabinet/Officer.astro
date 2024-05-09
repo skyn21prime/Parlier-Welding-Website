@@ -14,38 +14,36 @@ const { name , position , img = "", gridCol = ""} = Astro.props;
 ---
 
 <div class=" grid grid-cols-2 grid-rows-3 p-4">
-    <img alt="Place Holder Image" class=" flex justify-center items-center rounded-md">
-    <h2 class=" bg-slate-300 rounded-md pl-5"> {name} </h2>
+    <img alt="Place Holder Image">
+    <h2> {name} </h2>
     <h3 style="margin: auto; width:100%;">Club {position}</h3>
-    <p class=" bg-slate-500 rounded-md">
+    <p>
         <slot />
     </p>
 </div>
 
 <style lang="less" define:vars={{gridCol}}>
     div{
-        background-color: black;
-        border-radius: 10px;
-        height: 300px;
-        width: 100%;
-        column-gap: 25px;
-        grid-template-rows: 1fr 1fr 5fr;
-        grid-column:var(--gridCol) ;
-        align-items: stretch;
-        font-size: 12px;
-        transition: box-shadow 250ms;
-        &:hover{
-            box-shadow: 0 0 5px 5px skyblue;
-        }
-        & img{
-            grid-row: 1 / -1;
-            background-color: white;
-            color: black;
-        }
-    }
-</style>
-<style>
-    div{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: var(--gridCol);
 
+        transition: 250ms box-shadow;
+
+        padding: 16px;
+
+        border: 1px white solid;
+        border-radius: 10px;
+
+        img{
+            grid-row: 1 / -1;
+        }
+        p{
+            font-size: 11px;
+        }
+        &:hover{
+            box-shadow: 0 0 5px 5px rgb(140, 182, 255);
+        }
     }
 </style>

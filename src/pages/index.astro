@@ -1,37 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
+
+import Image from "astro/components/Image.astro";
+import Layout from "../layouts/Layout.astro";
+
+
+import main from "./main.js"
 ---
 
-<Layout name="Home">
-	<div id="Top">
-		<div style="display: flex; align-items:center; justify-content: center;">
-			Example image
-		</div>
-		<div style="display: grid; gap:40px; padding-block: 40px;">
-			<hr>
-			<h1>Example Text</h1>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis porro eaque doloremque possimus, aperiam soluta totam at assumenda beatae voluptatibus explicabo quam in facere dolor laudantium consectetur. Officiis, quae quam.</p>
-			<hr>
-		</div>
-	</div>
-	<div>
-		<h1>Cool Stuff</h1>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nulla soluta praesentium quas deleniti, expedita a obcaecati quibusdam blanditiis magnam quo velit dolorum accusamus placeat debitis inventore ea ducimus ipsum?</p>
-	</div>
+<Layout title="Home">
+    <div id="Main-Display">
+        <h1>
+            <span style="overflow-x: hidden;">Parlier</span>
+            <span style="color:#80b9ff;" id="slideInLeft">Welding Club</span>
+        </h1>
+    </div>
 </Layout>
+<style is:global>
+    img{
+        width: 100vw;
+        height: auto;
+    }
+    #Main-Display{
+        display: grid;
+        align-items: center;
+        justify-items: center;
 
-<style>
-	#Top{
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		width: 100vw;
-		max-width: 100vw;
-		height: 400px;
-		box-sizing: border-box;
-		padding-inline: 24px;
-	}
-	hr{
-		width: 100%;
-		height: 0px;
-	}
+        height: 600px;
+
+
+        background-image: url("https://weldernation.com/cdn/shop/files/WN_BeanieCollection_Homepage_1800x1000_caf1ceda-8640-402e-add0-38ffcd647294_3000x.jpg?v=1694449280");
+        object-fit: cover;
+    }
+    #slideInLeft{
+        overflow-x: hidden;
+        text-wrap: nowrap;
+        animation: show 3s ease;
+    }
+    #slideInLeft::after{
+        content: "";
+        top:0px;
+        right: 0px;
+
+        width: 5px;
+        height: 100%;
+
+        display: block;
+
+        position: absolute;
+        right:0px;
+
+        animation: fadeAway 1s;
+
+    }
+    @keyframes show {
+        from{
+            max-width: 0vw;
+        }
+        to{
+            max-width: 100vw;
+        }
+    }
+    @keyframes fadeAway{
+        from{background-color:white;}
+        to{background-color:transparent; }
+    }
 </style>

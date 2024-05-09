@@ -1,0 +1,10 @@
+#Projects{
+    display: flex;
+    align-items: center;
+    
+    overflow-y: scroll;
+}
+.Project:hover{
+    text-shadow: 0 0 2px whitesmoke;
+    box-shadow: 0 0 5px 5px inherit;
+}

@@ -1,52 +1,24 @@
 ---
-const Lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dignissimos sed dolore fugit quae neque rerum perferendis voluptatem, numquam, placeat inventore ad quisquam tempore omnis odit quas illum voluptatum? Error."
+
+import { Header } from '../components/Header.tsx';
+import "./styles.css"
 
 interface Props {
-	name: string;
-	desc?:string;
+	title:string;
 }
 
-const { name, desc = Lorem } = Astro.props;
+const { title="" } = Astro.props
 
-import Header from "../components/Required/Header.astro"
-import "./styles.less"
-
-let visible = true
-let show = false
-
-if(name=="Home"){
-	visible = false
-}
-if(desc != ""){
-	show = true
-}
 ---
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Parlier Welding | {name}</title>
-	</head>
-	<body>
-		<script is:inline define:vars={{name}}>
-		const Name = name
-		</script>
-		<Header CurrentPage={name}></Header>
-		{visible &&
-
-		<div id="Page-Title" class=" bg-slate-400">
-			<hr>
-			<h1>
-				{name}
-			</h1>
-			{show && <p>{desc}</p>}
-			<hr>
-		</div>
-
-		}
-		<slot />
-		*To be added and worked on
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{title}</title>
+</head>
+<body>
+	<Header page={title} client:load/>
+	<slot />
+</body>
 </html>

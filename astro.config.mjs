@@ -5,12 +5,10 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react()],
+  integrations: [ react()],
   redirects: {
-    '/Home': "/Parlier-Welding-Website/",
+    '/Home': "/",
  },
- site: "https://cyborgnetical.github.io/Parlier-Welding-Website/",
- base:"/Parlier-Welding-Website/",
- public: './public'
+ site: "https://cyborgnetical.github.io/Parlier-Welding-Website/"
 });
 
