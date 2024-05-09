@@ -1,20 +1,21 @@
 @font-face {
     font-family: "Iceberg";
-    src: url("/fonts/Iceberg-Regular.ttf");
+    src: url("/Parlier-Welding-Website/fonts/Iceberg-Regular.ttf");
 }
 
 @font-face {
     font-family: "Inter";
-    src: url("/fonts/Inter.ttf");
+    src: url("/Parlier-Welding-Website/fonts/Inter.ttf");
 }
 
 @font-face {
     font-family: "Electrolize";
-    src: url("/public/fonts/Electrolize-Regular.ttf");
+    src: url("/Parlier-Welding-Website/fonts/Electrolize-Regular.ttf");
 }
+
 @font-face {
     font-family: "Expletus Sans";
-    src: url("/fonts/ExpletusSans-VariableFont_wght.ttf");
+    src: url("/Parlier-Welding-Website/fonts/ExpletusSans-VariableFont_wght.ttf");
 }
 
 body{

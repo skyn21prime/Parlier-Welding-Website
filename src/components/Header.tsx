@@ -12,9 +12,9 @@ export const Header = ({ page }: props) => {
             <div id="Main-Header-Top">
                 <h1>Parlier Welding Club</h1>
                 <nav>
-                <a href="/">Home</a>
+                <a href="/Parlier-Welding-Website/">Home</a>
                     {folders.map((text) => {
-                        return <a href={text}>{text}</a>;
+                        return <a href={"/Parlier-Welding-Website/"+text}>{text}</a>;
                     })}
                 </nav>
             </div>

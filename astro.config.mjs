@@ -7,8 +7,9 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [ react()],
   redirects: {
-    '/Home': "/",
+    '/Home': "/Parlier-Welding-Website/",
  },
- site: "https://cyborgnetical.github.io/Parlier-Welding-Website/"
+ site: "https://cyborgnetical.github.io/Parlier-Welding-Website/",
+ base:"/Parlier-Welding-Website/"
 });
 
