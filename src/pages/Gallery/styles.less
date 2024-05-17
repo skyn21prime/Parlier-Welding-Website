@@ -1,0 +1,45 @@
+.Carousel{
+    display: grid;
+
+    width: 100vw;
+    height: 500px;
+}
+@grid-number:3;
+@grid-images: 9fr;
+
+
+#CarouselControls{
+    position: absolute;
+    grid-template-areas:"Left Empty Right";
+    grid-template-columns: 1fr @grid-images 1fr;
+    .Carousel();
+
+
+    & button{
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        padding: 10px;
+        &#leftBtn{
+           grid-area: Left;
+        }
+        &#rightBtn{
+            grid-area: Right;
+        }
+    }
+}
+#ImageCarousel{
+    .Carousel();
+
+    grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+
+
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
