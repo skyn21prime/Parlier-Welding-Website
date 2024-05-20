@@ -59,6 +59,7 @@ async function fetchFiles(token = "") {
             let data = {
                 name: file.name || "",
                 url: `https://lh3.googleusercontent.com/d/${file.id}`,
+                id:file.id,
                 video: ``,
                 desc: "",
             };

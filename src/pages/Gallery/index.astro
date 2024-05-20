@@ -2,18 +2,20 @@
     import Layout from "../../layouts/Layout.astro";
     import "./styles.less"
     import "./Image-Info.less"
+
+    import data from "../../../data/gallery/gallery.json"
 ---
 <Layout title="Projects">
     <div id="CarouselControls">
-        <button id="leftBtn">&lt;</button>
-        <button id="rightBtn"> &gt; </button>
+        <div id="lefto"><button id="leftBtn" onclick="backwards()">&lt;</button></div>
+        <div id="righto"><button id="rightBtn"> &gt; </button></div>
     </div>
     <div id="ImageCarousel">
-        <img class="hidden" id="Leftest">
+        <img class="hidden" id="leftest">
         <img id="left">
         <img id="center">
         <img id="right">
-        <img class="hidden" id="Rightest">
+        <img class="hidden" id="rightest">
     </div>
     <div style="display: flex; justify-content:center; flex-wrap: wrap; margin:25px;">
         <hr>
@@ -22,13 +24,62 @@
     </div>
 
     <div id="Image-Info">
-        <img id="image" alt="placeHolder" style="grid-area: Image;">
+        <object id="image" style="grid-area: Image;"></object>
         <div id="Information">
             <h2 id="file">Example.img</h2>
             <span id="info">Extra info</span>
             <p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra vel turpis. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Tincidunt eget nullam non nisi est sit amet facilisis. Egestas pretium aenean pharetra magna ac placerat vestibulum. Lobortis feugiat vivamus at augue eget. Dictum sit amet justo donec enim. Id volutpat lacus laoreet non curabitur. Sit amet tellus cras adipiscing enim eu. Felis eget velit aliquet sagittis. Interdum velit laoreet id donec ultrices tincidunt. Eget arcu dictum varius duis at consectetur. Sed felis eget velit aliquet sagittis. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. In metus vulputate eu scelerisque felis imperdiet proin. In fermentum posuere urna nec.</p>
         </div>
-    <script>
-        console.log("sup")
+    <script is:inline define:vars={{data}} lang="javascript">
+        let displayingImages = []
+        let currentImage = {}
+        let currentIndex = 0
+
+        /**
+         * @param {number} index
+         * @param {string} index
+         */
+        function setImg(index,location){
+            if(index>data.length-1){
+                index = index-data.length-1
+            }
+            if(index<=-1){
+                index = data.length-1+index
+            }
+            document.getElementById(location).src = data[index].url
+        }
+        function update(){
+            if(currentIndex>data.length-1){
+                currentIndex = 0
+            }
+            if(currentIndex==-1){
+                currentIndex = data.length-1
+            }
+            setImg(currentIndex-2,"leftest")
+            setImg(currentIndex-1,"left")
+            setImg(currentIndex,"center")
+            setImg(currentIndex+1,"right")
+            setImg(currentIndex+2,"rightest")
+
+
+
+            document.getElementById("file").innerText = data[currentIndex].name
+            document.getElementById("desc").innerText = (data[currentIndex].desc == "" ? "this image has no description" : data[currentIndex].desc)
+            document.getElementById("image").data = `https://drive.google.com/file/d/${data[currentIndex].id}/preview`
+            document.getElementById("info").innerHTML = `<a href=${data[currentIndex].url}>${data[currentIndex].url}</a>`
+
+        }
+        document.getElementById("image").addEventListener("load",()=>{
+
+        })
+        document.getElementById("rightBtn").onclick = ()=>{
+            currentIndex++
+            update()
+        }
+        document.getElementById("leftBtn").onclick = ()=>{
+            currentIndex--
+            update()
+        }
+        update()
     </script>
 </Layout>
