@@ -10,7 +10,7 @@ export const Header = ({ page }: props) => {
     return (
         <header id="Main-Header">
             <div id="Main-Header-Top">
-                <h1>Parlier Welding Club</h1>
+                <h1><a href="/Parlier-Welding-Website/">Parlier Welding Club</a></h1>
                 <nav>
                 <a href="/Parlier-Welding-Website/">Home</a>
                     {folders.map((text) => {

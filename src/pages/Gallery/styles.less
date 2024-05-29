@@ -27,9 +27,17 @@
         background-color: var(--backgroundColor);
         &#lefto{
             grid-area: Left;
+            transition: ease 2s;
+        }
+        &#lefto:hover{
+            transform: translate(10px,0%);
         }
         &#righto{
             grid-area: Right;
+            transition: ease 2s;
+        }
+        &#righto:hover{
+            transform: translate(-10px,0%);
         }
     }
 
